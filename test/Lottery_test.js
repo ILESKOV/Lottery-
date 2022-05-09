@@ -18,7 +18,7 @@ contract('Lottery', accounts => {
     describe('#lottery tests', () => {
         let price = '250000000000' //2500 usd
         beforeEach(async () => {
-            //For tests, I disabled subscriptions, but the argument needs to be submitted
+            //For tests, I disabled subscriptions, but this argument needs to be submitted
             subscriptionId = 3963; 
             keyhash = '0xd89b2bf150e3b9e13446986e571fb9cab24b13cea0a43ea20a6049a85cc807cc'
             fee = '250000000000000000' // 0.25 LINK(PREMIUM)
