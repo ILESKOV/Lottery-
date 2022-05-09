@@ -78,10 +78,10 @@ contract VRFCoordinatorV2Mock is VRFCoordinatorV2Interface {
     (bool success, ) = _consumer.call{gas: req.callbackGasLimit}(callReq);
 
     uint96 payment = uint96(BASE_FEE + ((startGas - gasleft()) * GAS_PRICE_LINK));
-    if (s_subscriptions[req.subId].balance < payment) {
-      revert InsufficientBalance();
-    }
-    s_subscriptions[req.subId].balance -= payment;
+    // if (s_subscriptions[req.subId].balance < payment) {
+    //   revert InsufficientBalance();
+    // }
+    // s_subscriptions[req.subId].balance -= payment;
     delete (s_requests[_requestId]);
     emit RandomWordsFulfilled(_requestId, _requestId, payment, success);
   }
@@ -108,9 +108,9 @@ contract VRFCoordinatorV2Mock is VRFCoordinatorV2Interface {
     uint32 _callbackGasLimit,
     uint32 _numWords
   ) external override returns (uint256) {
-    if (s_subscriptions[_subId].owner == address(0)) {
-      revert InvalidSubscription();
-    }
+    // if (s_subscriptions[_subId].owner == address(0)) {
+    //   revert InvalidSubscription();
+    // }
 
     uint256 requestId = s_nextRequestId++;
     uint256 preSeed = s_nextPreSeed++;
