@@ -44,7 +44,7 @@ contract('Lottery', accounts => {
         })
         it('corrects get the participation fee', async () => {
             let participationFee = await lottery.getParticipationFee()
-            assert.equal(participationFee.toString(), toWei(0.02))
+            assert(participationFee.toString() == toWei(0.02))
         })
         it('disallow participation without enough money', async () => {
             await lottery.startLottery({ from: defaultAccount })
