@@ -34,7 +34,7 @@
 
 ## Setup
 
-Just run "npm isntall" to install all dependencies and you will be able to run tests and test by yourself
+Just run "npm install" to install all dependencies and you will be able to run tests and test by yourself
 ```
 npm install
 ```
